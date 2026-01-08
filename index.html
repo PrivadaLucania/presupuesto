@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presupuestos · Privada Lucania</title>
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body { background:#f6f7f9; }
+    .hero {
+      background: linear-gradient(90deg, #0d6efd, #084298);
+      color: #fff;
+      border-radius: 1rem;
+    }
+    .card {
+      border: 0;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+    .badge-soft {
+      background: rgba(13,110,253,.12);
+      color: #0d6efd;
+      border: 1px solid rgba(13,110,253,.25);
+    }
+    footer { opacity:.85; }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="#">
+      Privada Lucania · Presupuestos
+    </a>
+  </div>
+</nav>
+
+<main class="container my-4">
+
+  <!-- Encabezado -->
+  <section class="hero p-4 p-md-5 mb-4">
+    <h1 class="h3 fw-bold mb-2">Presupuestos y gasto real</h1>
+    <p class="mb-0">
+      Este sitio concentra la información de <strong>presupuesto estimado</strong>
+      y <strong>gasto real ejecutado</strong> por período.
+      Su objetivo es brindar <strong>transparencia</strong>,
+      facilitar el seguimiento financiero y documentar la evolución de los recursos
+      de la privada.
+    </p>
+  </section>
+
+  <!-- Qué incluye -->
+  <section class="row g-3 mb-4">
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h2 class="h6 fw-bold">📊 Presupuesto</h2>
+        <p class="small text-secondary mb-0">
+          Proyección de gastos fijos y operativos basada en información real
+          de periodos anteriores. Sirve como referencia para la planeación mensual.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h2 class="h6 fw-bold">💸 Gasto real</h2>
+        <p class="small text-secondary mb-0">
+          Registro de los pagos efectivamente realizados durante el mes,
+          conforme se van erogando, con fechas y montos reales.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h2 class="h6 fw-bold">🔍 Comparativo</h2>
+        <p class="small text-secondary mb-0">
+          Comparación entre lo presupuestado y lo ejecutado,
+          permitiendo identificar desviaciones y explicar su origen.
+        </p>
+     
+      </div>
+    </div>
+  </section>
+
+  <!-- Nota clave -->
+  <section class="card p-3 mb-4">
+    <span class="badge badge-soft rounded-pill mb-2">Nota importante</span>
+    <p class="small text-secondary mb-0">
+      El <strong>presupuesto de mantenimiento se considera en $0.00</strong>,
+      ya que actualmente no existe un monto asignado previamente para este concepto.
+      Cualquier gasto de mantenimiento que se presente será reflejado
+      directamente en el apartado de <strong>gasto real</strong> y documentado
+      de forma transparente.
+    </p>
+  </section>
+
+  <!-- Acceso por año -->
+  <section class="card p-3 mb-4">
+    <h2 class="h6 fw-bold mb-3">Presupuestos disponibles</h2>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>📅 Presupuesto y ejecución 2026</span>
+        <a href="2026.html" class="btn btn-sm btn-outline-primary">
+          Ver detalle
+        </a>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="bg-dark text-white text-center py-3">
+  <p class="mb-0 small">
+    &copy; 2026 Privada Lucania · Información financiera de carácter informativo
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
