@@ -6,13 +6,14 @@
   <title>Presupuestos · Privada Lucania</title>
 
   <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    body { background:#f6f7f9; }
+    body { background: #f6f7f9; }
     .hero {
-      background: linear-gradient(90deg, #0d6efd, #084298);
+      background: linear-gradient(90deg, #198754, #157347);
       color: #fff;
       border-radius: 1rem;
     }
@@ -21,19 +22,22 @@
       border-radius: 1rem;
       box-shadow: 0 10px 30px rgba(0,0,0,.06);
     }
-    .badge-soft {
-      background: rgba(13,110,253,.12);
-      color: #0d6efd;
-      border: 1px solid rgba(13,110,253,.25);
+    .section-title {
+      display:flex; gap:.5rem; align-items:center;
     }
-    footer { opacity:.85; }
+    .badge-soft {
+      background: rgba(25,135,84,.12);
+      color: #198754;
+      border: 1px solid rgba(25,135,84,.25);
+    }
+    footer { opacity: .9; }
   </style>
 </head>
 
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="#">
       Privada Lucania · Presupuestos
@@ -43,23 +47,25 @@
 
 <main class="container my-4">
 
-  <!-- Encabezado -->
+  <!-- Hero / Encabezado -->
   <section class="hero p-4 p-md-5 mb-4">
-    <h1 class="h3 fw-bold mb-2">Presupuestos y gasto real</h1>
+    <h1 class="h3 fw-bold mb-2">Presupuesto y gasto real</h1>
     <p class="mb-0">
       Este sitio concentra la información de <strong>presupuesto estimado</strong>
       y <strong>gasto real ejecutado</strong> por período.
-      Su objetivo es brindar <strong>transparencia</strong>,
-      facilitar el seguimiento financiero y documentar la evolución de los recursos
-      de la privada.
+      Su objetivo es brindar <strong>transparencia</strong> y facilitar
+      el seguimiento financiero por parte de los propietarios.
     </p>
   </section>
 
-  <!-- Qué incluye -->
+  <!-- Qué se muestra -->
   <section class="row g-3 mb-4">
-    <div class="col-md-4">
+    <div class="col-12 col-md-4">
       <div class="card p-3 h-100">
-        <h2 class="h6 fw-bold">📊 Presupuesto</h2>
+        <div class="section-title mb-2">
+          <span class="fs-5">📊</span>
+          <h2 class="h6 mb-0 fw-bold">Presupuesto</h2>
+        </div>
         <p class="small text-secondary mb-0">
           Proyección de gastos fijos y operativos basada en información real
           de periodos anteriores. Sirve como referencia para la planeación mensual.
@@ -67,34 +73,39 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-12 col-md-4">
       <div class="card p-3 h-100">
-        <h2 class="h6 fw-bold">💸 Gasto real</h2>
+        <div class="section-title mb-2">
+          <span class="fs-5">💸</span>
+          <h2 class="h6 mb-0 fw-bold">Gasto real</h2>
+        </div>
         <p class="small text-secondary mb-0">
           Registro de los pagos efectivamente realizados durante el mes,
-          conforme se van erogando, con fechas y montos reales.
+          conforme se van erogando, con montos y fechas reales.
         </p>
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-12 col-md-4">
       <div class="card p-3 h-100">
-        <h2 class="h6 fw-bold">🔍 Comparativo</h2>
+        <div class="section-title mb-2">
+          <span class="fs-5">🔍</span>
+          <h2 class="h6 mb-0 fw-bold">Comparativo</h2>
+        </div>
         <p class="small text-secondary mb-0">
           Comparación entre lo presupuestado y lo ejecutado,
-          permitiendo identificar desviaciones y explicar su origen.
+          permitiendo identificar desviaciones y explicarlas con claridad.
         </p>
-     
       </div>
     </div>
   </section>
 
-  <!-- Nota clave -->
+  <!-- Nota importante -->
   <section class="card p-3 mb-4">
     <span class="badge badge-soft rounded-pill mb-2">Nota importante</span>
     <p class="small text-secondary mb-0">
       El <strong>presupuesto de mantenimiento se considera en $0.00</strong>,
-      ya que actualmente no existe un monto asignado previamente para este concepto.
+      ya que actualmente no existe un monto previamente asignado para este concepto.
       Cualquier gasto de mantenimiento que se presente será reflejado
       directamente en el apartado de <strong>gasto real</strong> y documentado
       de forma transparente.
@@ -103,12 +114,15 @@
 
   <!-- Acceso por año -->
   <section class="card p-3 mb-4">
-    <h2 class="h6 fw-bold mb-3">Presupuestos disponibles</h2>
+    <div class="section-title mb-3">
+      <span class="fs-5">📅</span>
+      <h2 class="h6 mb-0 fw-bold">Presupuestos disponibles</h2>
+    </div>
 
     <ul class="list-group list-group-flush">
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>📅 Presupuesto y ejecución 2026</span>
-        <a href="2026.html" class="btn btn-sm btn-outline-primary">
+        <span>Presupuesto y ejecución 2026</span>
+        <a href="2026.html" class="btn btn-sm btn-outline-success">
           Ver detalle
         </a>
       </li>
@@ -117,7 +131,7 @@
 
 </main>
 
-<footer class="bg-dark text-white text-center py-3">
+<footer class="bg-dark text-white text-center py-3 mt-4">
   <p class="mb-0 small">
     &copy; 2026 Privada Lucania · Información financiera de carácter informativo
   </p>
