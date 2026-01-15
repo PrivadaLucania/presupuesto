@@ -44,7 +44,6 @@
 
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="index.html">
@@ -55,7 +54,6 @@
 
 <main class="container my-4">
 
-  <!-- Hero -->
   <section class="hero p-4 p-md-5 mb-4">
     <h1 class="h3 fw-bold mb-2">Presupuesto y gasto real – 2026</h1>
     <p class="mb-0">
@@ -66,7 +64,6 @@
     </p>
   </section>
 
-  <!-- Nota general -->
   <section class="card p-3 mb-4">
     <span class="badge badge-soft rounded-pill mb-2">Criterio general</span>
     <p class="small text-secondary mb-0">
@@ -95,8 +92,7 @@
           </button>
         </h2>
 
-        <div id="eneroPresupuesto" class="accordion-collapse collapse show"
-             data-bs-parent="#enero2026">
+        <div id="eneroPresupuesto" class="accordion-collapse collapse show">
           <div class="accordion-body small text-secondary">
 
             <table class="table table-sm table-bordered align-middle">
@@ -107,23 +103,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Administración IBIZA</td><td class="text-end">$12,000.00</td></tr>
-                <tr><td>Vigilancia GVC</td><td class="text-end">$27,000.00</td></tr>
-                <tr><td>Seguridad – Portón principal</td><td class="text-end">$3,050.00</td></tr>
-                <tr><td>Alberca</td><td class="text-end">$8,000.00</td></tr>
-                <tr><td>Limpieza</td><td class="text-end">$6,000.00</td></tr>
-                <tr><td>Jardinero</td><td class="text-end">$8,000.00</td></tr>
-                <tr><td>Insumos de limpieza</td><td class="text-end">$800.00</td></tr>
-                <tr><td>Caseta – Internet</td><td class="text-end">$500.00</td></tr>
-                <tr><td>Caseta – Agua para beber</td><td class="text-end">$192.00</td></tr>
-                <tr><td>Caseta – Recolección de basura</td><td class="text-end">$500.00</td></tr>
-                <tr><td>CFE – Áreas comunes (prorrateado)</td><td class="text-end">$13,042.00</td></tr>
-                <tr><td>Vialidad – Jardinería</td><td class="text-end">$1,334.00</td></tr>
+                <tr><td>Administración IBIZA</td><td class="text-end monto-presupuesto-enero">$12,000.00</td></tr>
+                <tr><td>Vigilancia GVC</td><td class="text-end monto-presupuesto-enero">$27,000.00</td></tr>
+                <tr><td>Seguridad – Portón principal</td><td class="text-end monto-presupuesto-enero">$3,050.00</td></tr>
+                <tr><td>Alberca</td><td class="text-end monto-presupuesto-enero">$8,000.00</td></tr>
+                <tr><td>Limpieza</td><td class="text-end monto-presupuesto-enero">$6,000.00</td></tr>
+                <tr><td>Jardinero</td><td class="text-end monto-presupuesto-enero">$8,000.00</td></tr>
+                <tr><td>Insumos de limpieza</td><td class="text-end monto-presupuesto-enero">$800.00</td></tr>
+                <tr><td>Caseta – Internet</td><td class="text-end monto-presupuesto-enero">$500.00</td></tr>
+                <tr><td>Caseta – Agua para beber</td><td class="text-end monto-presupuesto-enero">$192.00</td></tr>
+                <tr><td>Caseta – Recolección de basura</td><td class="text-end monto-presupuesto-enero">$500.00</td></tr>
+                <tr><td>CFE – Áreas comunes (prorrateado)</td><td class="text-end monto-presupuesto-enero">$13,042.00</td></tr>
+                <tr><td>Vialidad – Jardinería</td><td class="text-end monto-presupuesto-enero">$1,334.00</td></tr>
               </tbody>
               <tfoot>
                 <tr class="fw-bold">
                   <td>Total presupuesto enero 2026</td>
-                  <td class="text-end">$80,418.00</td>
+                  <td class="text-end" id="totalPresupuestoEnero"></td>
                 </tr>
               </tfoot>
             </table>
@@ -141,8 +137,7 @@
           </button>
         </h2>
 
-        <div id="eneroReal" class="accordion-collapse collapse"
-             data-bs-parent="#enero2026">
+        <div id="eneroReal" class="accordion-collapse collapse">
           <div class="accordion-body small text-secondary">
 
             <table class="table table-sm table-bordered align-middle">
@@ -157,18 +152,18 @@
                 <tr>
                   <td>05/01/2026</td>
                   <td>Caseta – Agua para beber (2 garrafones)</td>
-                  <td class="text-end">$98.00</td>
+                  <td class="text-end monto-real-enero">$98.00</td>
                 </tr>
                 <tr>
                   <td>08/01/2026</td>
                   <td>Mano de obra para instalación de bomba de agua en cisterna</td>
-                  <td class="text-end">$1,400.00</td>
+                  <td class="text-end monto-real-enero">$1,400.00</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr class="fw-bold">
                   <td colspan="2">Total gasto real enero 2026</td>
-                  <td class="text-end">$1,498.00</td>
+                  <td class="text-end" id="totalRealEnero"></td>
                 </tr>
               </tfoot>
             </table>
@@ -189,6 +184,24 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function limpiarNumero(texto) {
+    return parseFloat(texto.replace(/[$,]/g, '')) || 0;
+  }
+
+  function calcularTotal(clase, destino) {
+    let total = 0;
+    document.querySelectorAll(clase).forEach(td => {
+      total += limpiarNumero(td.textContent);
+    });
+    document.getElementById(destino).textContent =
+      '$' + total.toLocaleString('es-MX', { minimumFractionDigits: 2 });
+  }
+
+  calcularTotal('.monto-presupuesto-enero', 'totalPresupuestoEnero');
+  calcularTotal('.monto-real-enero', 'totalRealEnero');
+</script>
 
 </body>
 </html>
