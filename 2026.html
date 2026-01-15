@@ -7,44 +7,30 @@
 
   <link rel="icon" type="image/png" href="img/favicon.png?v=1">
   <link rel="shortcut icon" href="img/favicon.png?v=1" type="image/png">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    body { background: #f6f7f9; }
+    body { background:#f6f7f9; }
     .hero {
-      background: linear-gradient(90deg, #198754, #157347);
-      color: #fff;
-      border-radius: 1rem;
+      background: linear-gradient(90deg,#198754,#157347);
+      color:#fff; border-radius:1rem;
     }
     .card {
-      border: 0;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      border:0; border-radius:1rem;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
     }
-    .section-title {
-      display:flex; gap:.5rem; align-items:center;
-    }
-    .badge-soft {
-      background: rgba(25,135,84,.12);
-      color: #198754;
-      border: 1px solid rgba(25,135,84,.25);
-    }
-    footer { opacity: .9; }
     table th { background:#f1f3f5; }
   </style>
 
-  <!-- Contador de visitas (GoatCounter) -->
   <script
     data-goatcounter="https://privadalucania.goatcounter.com/count"
-    async
-    src="https://gc.zgo.at/count.js">
+    async src="https://gc.zgo.at/count.js">
   </script>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-dark bg-success">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="index.html">
       Privada Lucania · Presupuesto 2026
@@ -54,161 +40,144 @@
 
 <main class="container my-4">
 
-  <section class="hero p-4 p-md-5 mb-4">
-    <h1 class="h3 fw-bold mb-2">Presupuesto y gasto real – 2026</h1>
-    <p class="mb-0">
-      En esta página se presenta el <strong>presupuesto estimado</strong> y el
-      <strong>gasto real ejecutado</strong> por mes durante el año 2026.
-      El objetivo es brindar <strong>transparencia</strong> y facilitar el seguimiento
-      financiero por parte de los propietarios.
-    </p>
-  </section>
+<section class="hero p-4 mb-4">
+  <h1 class="h4 fw-bold">Presupuesto y gasto real – 2026</h1>
+  <p class="mb-0">Seguimiento financiero mensual con criterio de transparencia.</p>
+</section>
 
-  <section class="card p-3 mb-4">
-    <span class="badge badge-soft rounded-pill mb-2">Criterio general</span>
-    <p class="small text-secondary mb-0">
-      El presupuesto de <strong>mantenimiento se considera en $0.00</strong>, ya que
-      no existe un monto previamente asignado para este concepto.
-      Cualquier gasto de mantenimiento que se presente se reflejará directamente
-      en el apartado de <strong>gasto real</strong>.
-    </p>
-  </section>
+<!-- ENERO -->
+<section class="card p-3 mb-4">
+  <h2 class="h6 fw-bold mb-3">📅 Enero 2026</h2>
 
-  <!-- ENERO 2026 -->
-  <section class="card p-3 mb-4">
-    <div class="section-title mb-2">
-      <span class="fs-5">📅</span>
-      <h2 class="h6 mb-0 fw-bold">Enero 2026</h2>
-    </div>
+  <!-- PRESUPUESTO -->
+  <h3 class="h6">Presupuesto estimado</h3>
+  <table class="table table-sm table-bordered">
+    <thead>
+      <tr><th>Concepto</th><th class="text-end">Monto</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ADMINISTRACIÓN – IBIZA</td><td class="text-end monto-presupuesto cat-administracion">$12,000.00</td></tr>
+      <tr><td>SEGURIDAD – Vigilancia GVC</td><td class="text-end monto-presupuesto cat-seguridad">$27,000.00</td></tr>
+      <tr><td>SEGURIDAD – Portón principal</td><td class="text-end monto-presupuesto cat-seguridad">$3,050.00</td></tr>
+      <tr><td>SERVICIOS OPERATIVOS – Alberca</td><td class="text-end monto-presupuesto cat-servicios-operativos">$8,000.00</td></tr>
+      <tr><td>SERVICIOS OPERATIVOS – Limpieza</td><td class="text-end monto-presupuesto cat-servicios-operativos">$6,000.00</td></tr>
+      <tr><td>SERVICIOS OPERATIVOS – Jardinero</td><td class="text-end monto-presupuesto cat-servicios-operativos">$8,000.00</td></tr>
+      <tr><td>CASETA – Internet</td><td class="text-end monto-presupuesto cat-caseta">$500.00</td></tr>
+      <tr><td>CASETA – Agua para beber</td><td class="text-end monto-presupuesto cat-caseta">$192.00</td></tr>
+      <tr><td>SERVICIOS GENERALES – Recolección de basura</td><td class="text-end monto-presupuesto cat-servicios-generales">$500.00</td></tr>
+      <tr><td>SERVICIOS GENERALES – CFE áreas comunes</td><td class="text-end monto-presupuesto cat-servicios-generales">$13,042.00</td></tr>
+      <tr><td>VIALIDAD – Jardinería</td><td class="text-end monto-presupuesto cat-vialidad">$1,334.00</td></tr>
+    </tbody>
+    <tfoot>
+      <tr class="fw-bold">
+        <td>Total presupuesto enero</td>
+        <td class="text-end" id="totalPresupuesto"></td>
+      </tr>
+    </tfoot>
+  </table>
 
-    <div class="accordion" id="enero2026">
+  <!-- GASTO REAL -->
+  <h3 class="h6 mt-4">Gasto real acumulado</h3>
+  <table class="table table-sm table-bordered">
+    <thead>
+      <tr><th>Fecha</th><th>Concepto</th><th class="text-end">Monto</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>05/01/2026</td>
+        <td>CASETA – Agua para beber (2 garrafones)</td>
+        <td class="text-end monto-real cat-caseta">$98.00</td>
+      </tr>
+      <tr>
+        <td>08/01/2026</td>
+        <td>MANTENIMIENTO – Mano de obra bomba cisterna</td>
+        <td class="text-end monto-real cat-mantenimiento">$1,400.00</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="fw-bold">
+        <td colspan="2">Total gasto real enero</td>
+        <td class="text-end" id="totalReal"></td>
+      </tr>
+      <tr class="fw-bold">
+        <td colspan="2">Diferencia vs presupuesto</td>
+        <td class="text-end" id="diferenciaTotal"></td>
+      </tr>
+    </tfoot>
+  </table>
 
-      <!-- Presupuesto -->
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#eneroPresupuesto">
-            Presupuesto estimado
-          </button>
-        </h2>
+  <!-- RESUMEN POR CATEGORÍA -->
+  <h3 class="h6 mt-4">Presupuesto vs Gasto real por categoría</h3>
+  <table class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th>Categoría</th>
+        <th class="text-end">Presupuesto</th>
+        <th class="text-end">Real</th>
+        <th class="text-end">Diferencia</th>
+      </tr>
+    </thead>
+    <tbody id="tablaCategorias"></tbody>
+  </table>
 
-        <div id="eneroPresupuesto" class="accordion-collapse collapse show">
-          <div class="accordion-body small text-secondary">
-
-            <table class="table table-sm table-bordered align-middle">
-              <thead>
-                <tr>
-                  <th>Concepto</th>
-                  <th class="text-end">Monto mensual (MXN)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Administración IBIZA</td><td class="text-end monto-presupuesto-enero">$12,000.00</td></tr>
-                <tr><td>Vigilancia GVC</td><td class="text-end monto-presupuesto-enero">$27,000.00</td></tr>
-                <tr><td>Seguridad – Portón principal</td><td class="text-end monto-presupuesto-enero">$3,050.00</td></tr>
-                <tr><td>Alberca</td><td class="text-end monto-presupuesto-enero">$8,000.00</td></tr>
-                <tr><td>Limpieza</td><td class="text-end monto-presupuesto-enero">$6,000.00</td></tr>
-                <tr><td>Jardinero</td><td class="text-end monto-presupuesto-enero">$8,000.00</td></tr>
-                <tr><td>Insumos de limpieza</td><td class="text-end monto-presupuesto-enero">$800.00</td></tr>
-                <tr><td>Caseta – Internet</td><td class="text-end monto-presupuesto-enero">$500.00</td></tr>
-                <tr><td>Caseta – Agua para beber</td><td class="text-end monto-presupuesto-enero">$192.00</td></tr>
-                <tr><td>Caseta – Recolección de basura</td><td class="text-end monto-presupuesto-enero">$500.00</td></tr>
-                <tr><td>CFE – Áreas comunes (prorrateado)</td><td class="text-end monto-presupuesto-enero">$13,042.00</td></tr>
-                <tr><td>Vialidad – Jardinería</td><td class="text-end monto-presupuesto-enero">$1,334.00</td></tr>
-              </tbody>
-              <tfoot>
-                <tr class="fw-bold">
-                  <td>Total presupuesto enero 2026</td>
-                  <td class="text-end" id="totalPresupuestoEnero"></td>
-                </tr>
-              </tfoot>
-            </table>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Gasto real -->
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#eneroReal">
-            Gasto real acumulado
-          </button>
-        </h2>
-
-        <div id="eneroReal" class="accordion-collapse collapse">
-          <div class="accordion-body small text-secondary">
-
-            <table class="table table-sm table-bordered align-middle">
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Concepto</th>
-                  <th class="text-end">Monto (MXN)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>05/01/2026</td>
-                  <td>Caseta – Agua para beber (2 garrafones)</td>
-                  <td class="text-end monto-real-enero">$98.00</td>
-                </tr>
-                <tr>
-                  <td>08/01/2026</td>
-                  <td>Mantenimiento - Mano de obra para instalación de bomba de agua en cisterna</td>
-                  <td class="text-end monto-real-enero">$1,400.00</td>
-                </tr>
-                  <td>08/01/2026</td>
-                  <td>TEST - primper renglón de prueba</td>
-                  <td class="text-end monto-real-enero">$100,000.00</td>
-                </tr>
-                  <td>08/01/2026</td>
-                  <td>TEST - segundo renglón de prueba</td>
-                  <td class="text-end monto-real-enero">$200,000.00</td>
-                </tr>              
-              </tbody>
-              <tfoot>
-                <tr class="fw-bold">
-                  <td colspan="2">Total gasto real enero 2026</td>
-                  <td class="text-end" id="totalRealEnero"></td>
-                </tr>
-              </tfoot>
-            </table>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
+</section>
 </main>
 
-<footer class="bg-dark text-white text-center py-3 mt-4">
-  <p class="mb-0 small">
-    &copy; 2026 Privada Lucania · Información financiera de carácter informativo
-  </p>
+<footer class="bg-dark text-white text-center py-3">
+  <p class="small mb-0">&copy; 2026 Privada Lucania</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-  function limpiarNumero(texto) {
-    return parseFloat(texto.replace(/[$,]/g, '')) || 0;
-  }
+function limpiar(t){ return parseFloat(t.replace(/[$,]/g,''))||0; }
 
-  function calcularTotal(clase, destino) {
-    let total = 0;
-    document.querySelectorAll(clase).forEach(td => {
-      total += limpiarNumero(td.textContent);
-    });
-    document.getElementById(destino).textContent =
-      '$' + total.toLocaleString('es-MX', { minimumFractionDigits: 2 });
-  }
+function totalizar(selector){
+  let t=0;
+  document.querySelectorAll(selector).forEach(e=>t+=limpiar(e.textContent));
+  return t;
+}
 
-  calcularTotal('.monto-presupuesto-enero', 'totalPresupuestoEnero');
-  calcularTotal('.monto-real-enero', 'totalRealEnero');
+const categorias = [
+  {id:'administracion', nombre:'ADMINISTRACIÓN'},
+  {id:'seguridad', nombre:'SEGURIDAD'},
+  {id:'caseta', nombre:'CASETA'},
+  {id:'servicios-generales', nombre:'SERVICIOS GENERALES'},
+  {id:'servicios-operativos', nombre:'SERVICIOS OPERATIVOS'},
+  {id:'mantenimiento', nombre:'MANTENIMIENTO'},
+  {id:'vialidad', nombre:'VIALIDAD'}
+];
+
+const totalPres = totalizar('.monto-presupuesto');
+const totalReal = totalizar('.monto-real');
+
+document.getElementById('totalPresupuesto').textContent =
+  '$'+totalPres.toLocaleString('es-MX',{minimumFractionDigits:2});
+document.getElementById('totalReal').textContent =
+  '$'+totalReal.toLocaleString('es-MX',{minimumFractionDigits:2});
+
+const dif = totalPres - totalReal;
+const difCelda = document.getElementById('diferenciaTotal');
+difCelda.textContent =
+  '$'+dif.toLocaleString('es-MX',{minimumFractionDigits:2});
+difCelda.className = dif>=0 ? 'text-end text-success' : 'text-end text-danger';
+
+const tbody = document.getElementById('tablaCategorias');
+
+categorias.forEach(c=>{
+  const p = totalizar('.monto-presupuesto.cat-'+c.id);
+  const r = totalizar('.monto-real.cat-'+c.id);
+  if(p===0 && r===0) return;
+
+  const d = p-r;
+  tbody.innerHTML += `
+    <tr>
+      <td>${c.nombre}</td>
+      <td class="text-end">$${p.toLocaleString('es-MX',{minimumFractionDigits:2})}</td>
+      <td class="text-end">$${r.toLocaleString('es-MX',{minimumFractionDigits:2})}</td>
+      <td class="text-end ${d>=0?'text-success':'text-danger'}">
+        $${d.toLocaleString('es-MX',{minimumFractionDigits:2})}
+      </td>
+    </tr>`;
+});
 </script>
 
 </body>
